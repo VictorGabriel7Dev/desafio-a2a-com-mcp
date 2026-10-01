@@ -1,0 +1,22 @@
+# Versões travadas da entrega (exigência do enunciado). Fonte única: não há
+# requirements.txt em paralelo para evitar duas listas que divergem.
+# Instalação: `pip install .` a partir da raiz do repositório.
+[project]
+name = "desafio-a2a-com-mcp"
+version = "1.0.0"
+description = "A Ponte: agente A2A com MCP por dentro (fase 308 do MBA)"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp==2.2.0",
+    "starlette==1.7.0",
+    "uvicorn==0.54.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+# Dois processos (servidor-mcp/ e agente/), não um pacote importável: o
+# pyproject declara só as dependências travadas, sem empacotar módulos.
+[tool.setuptools]
+py-modules = []
